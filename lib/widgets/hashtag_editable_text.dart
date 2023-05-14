@@ -1,10 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:hashtagable/composer/composer.dart';
 import 'package:hashtagable/detector/detector.dart';
@@ -34,12 +31,7 @@ class HashTagEditableText extends EditableText {
     bool obscureText = false,
     bool readOnly = false,
     bool forceLine = true,
-    ToolbarOptions toolbarOptions = const ToolbarOptions(
-      copy: true,
-      cut: true,
-      paste: true,
-      selectAll: true,
-    ),
+    EditableTextContextMenuBuilder? contextMenuBuilder,
     bool autocorrect = true,
     SmartDashesType? smartDashesType,
     SmartQuotesType? smartQuotesType,
@@ -99,7 +91,7 @@ class HashTagEditableText extends EditableText {
           obscureText: obscureText,
           readOnly: readOnly,
           forceLine: forceLine,
-          toolbarOptions: toolbarOptions,
+          contextMenuBuilder: contextMenuBuilder,
           autocorrect: autocorrect,
           smartDashesType: smartDashesType,
           smartQuotesType: smartQuotesType,
